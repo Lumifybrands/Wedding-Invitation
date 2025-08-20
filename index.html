@@ -423,6 +423,37 @@
             transform: translateX(-50%);
         }
 
+        .lumify-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lumify-footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .lumify-footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .lumify-footer span {
+            color: var(--text-color);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -622,6 +653,10 @@
         <footer class="footer">
             <p class="mashallah">ما شاء الله</p>
         </footer>
+    </div>
+    <div class="lumify-footer">
+        <span>Made with ❤️ by </span>
+        <a href="https://lumifybrands.in" target="_blank">Lumify</a>
     </div>
 </body>
 </html>
