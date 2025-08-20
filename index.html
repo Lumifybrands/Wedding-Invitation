@@ -87,6 +87,24 @@
             background-size: 200% 200%;
         }
 
+        .name {
+            display: block;
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(184, 134, 11, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .name:hover {
+            transform: scale(1.05);
+        }
+        .ampersand {
+            display: block;
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #DAA520;
+            text-shadow: 1px 1px 3px rgba(218, 165, 32, 0.3);
+        }
+
         .elegant-border-left,
         .elegant-border-right {
             top: 10px;
@@ -474,14 +492,77 @@
             color: var(--primary-color);
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&display=swap');
+
         .couple-names {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             color: var(--accent-color);
-            margin: 2rem 0;
+            margin: 3rem 0;
             position: relative;
             text-align: center;
-            letter-spacing: 0.5px;
-            line-height: 1.8;
+            letter-spacing: 1px;
+            line-height: 2;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .couple-names .name {
+            display: block;
+            margin: 0.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .couple-names .ampersand {
+            font-size: 3rem;
+            color: var(--primary-color);
+            display: block;
+            margin: 0.5rem 0;
+            font-family: 'Tangerine', cursive;
+            position: relative;
+        }
+
+        .couple-names .ampersand::before,
+        .couple-names .ampersand::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+        }
+
+        .couple-names .ampersand::before {
+            right: calc(50% + 2rem);
+        }
+
+        .couple-names .ampersand::after {
+            left: calc(50% + 2rem);
+        }
+
+        .couple-names::before,
+        .couple-names::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            opacity: 0.2;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .couple-names::before {
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(180deg);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23B8860B'%3E%3Cpath d='M50,0c-5,25-20,40-45,45c25,5,40,20,45,45c5-25,20-40,45-45C70,40,55,25,50,0z'/%3E%3C/svg%3E");
+        }
+
+        .couple-names::after {
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23B8860B'%3E%3Cpath d='M50,0c-5,25-20,40-45,45c25,5,40,20,45,45c5-25,20-40,45-45C70,40,55,25,50,0z'/%3E%3C/svg%3E");
         }
 
         .details-card {
@@ -955,7 +1036,9 @@
                 <span>Together Forever</span>
             </h1>
             <div class="couple-names">
-                Muhammed Althaf S<br>&<br>Adhila S
+                <span class="name">Muhammed Althaf S</span>
+                <span class="ampersand">&</span>
+                <span class="name">Adhila S</span>
             </div>
         </header>
 
